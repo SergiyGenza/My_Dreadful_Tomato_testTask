@@ -9,3 +9,8 @@
 nav {
   display: flex;
 }
+
+a,
+a:visited {
+  color: $white;
+}

@@ -1,12 +1,8 @@
-// <uniquifier>: Use a uniquifier for the class name
-// <weight>: Use a value from 100 to 900
 @import "./variables";
 
 
 .montserrat {
   font-family: $font-primary;
-  // font-optical-sizing: auto;
-  // font-weight: weight;
   font-style: normal;
 }
 
@@ -22,8 +18,16 @@
   font-style: normal;
 }
 
+.roboto-semibold {
+  font-family: $font-secondary;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
 .roboto-bold {
   font-family: $font-secondary;
   font-weight: 700;
   font-style: normal;
+  letter-spacing: 1px;
 }
