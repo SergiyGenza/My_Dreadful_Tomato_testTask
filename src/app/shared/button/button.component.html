@@ -1,0 +1,13 @@
+<a routerLink="{{url}}" *ngIf="url else btn">
+  <button [ngClass]="btnClass" class="roboto-semibold" routerLinkActive="active">
+    <img *ngIf="icon" src="{{icon}}" alt="{{iconAlt}}">
+    {{title}}
+  </button>
+</a>
+
+<ng-template #btn>
+  <button [ngClass]="btnClass" class="roboto-semibold" routerLinkActive="active">
+    <img *ngIf="icon" src="{{icon}}" alt="{{iconAlt}}">
+    {{title}}
+  </button>
+</ng-template>

@@ -1,0 +1,29 @@
+<header>
+  <div class="container">
+    <div class="group left">
+      <img src="{{headerMock.logo}}" alt="{{headerMock.logoAlt}}" routerLink="/">
+      <nav>
+        <ng-container *ngFor="let btn of headerMock.firstBtnGroup">
+          <app-button *ngIf="displayButton(btn)"
+            [title]="btn.title"
+            [btnClass]="btn.type"
+            [icon]="btn.icon"
+            [iconAlt]="btn.iconAlt"
+            [url]="btn.url">
+        </app-button>
+      </ng-container>
+      </nav>
+    </div>
+    <div class="group right">
+      <ng-container *ngFor="let btn of headerMock.secondBtnGroup">
+        <app-button 
+          [title]="btn.title"
+          [btnClass]="btn.type"
+          [icon]="btn.icon"
+          [iconAlt]="btn.iconAlt"
+          [url]="btn.url">
+      </app-button>
+    </ng-container>
+    </div>
+  </div>
+</header>

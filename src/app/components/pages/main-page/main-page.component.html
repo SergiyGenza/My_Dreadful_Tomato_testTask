@@ -1,0 +1,8 @@
+<div class="main-contaimer">
+  <app-large-card *ngFor="let card of main.content" 
+    [img]="card.img"
+    [alt]="card.alt"
+    [title]="card.title"
+    [url]="card.url">
+  </app-large-card>
+</div>

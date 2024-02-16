@@ -1,0 +1,11 @@
+@import "./app/styles/reset";
+@import "./app/styles/variables";
+@import "./app/styles/base";
+@import "./app/styles/btns";
+@import "./app/styles/fonts";
+
+
+body {
+  color: $white;
+  background: $black;
+}

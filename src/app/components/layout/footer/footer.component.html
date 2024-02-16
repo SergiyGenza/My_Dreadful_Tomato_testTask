@@ -1,0 +1,18 @@
+<footer>
+  <div class="container">
+    <img src="{{footer.logo}}" alt="{{footer.alt}}">
+    <nav>
+      <ul>
+        <li class="roboto-bold" *ngFor="let item of footer.nav">
+          {{item}}
+        </li>
+      </ul>
+    </nav>
+    <div class="marketplaces">
+      <img *ngFor="let m of footer.marketplaces" src="{{m.market}}" alt="{{m.alt}}">
+    </div>
+    <div class="copyright montserrat">
+      Copyright 2020 Dreadfull Tomatreering Rights Reserved
+    </div>
+  </div>
+</footer>
