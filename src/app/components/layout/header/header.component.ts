@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HEADER } from 'src/app/common/mocks/header';
 
 @Component({
@@ -8,12 +9,19 @@ import { HEADER } from 'src/app/common/mocks/header';
 })
 export class HeaderComponent implements OnInit {
   headerMock = HEADER;
+  showBtn: boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.headerMock);
-    
   }
 
+  displayButton(btn): boolean {
+    const currentRoute = this.router.url;
+    if (currentRoute === '/' && btn.showOnMain === false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }

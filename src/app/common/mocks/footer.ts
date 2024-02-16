@@ -18,5 +18,5 @@ export const FOOTER = {
       alt: 'google-play'
     }
   ],
-  copyright: 'Copyright 2020 Dreadfull Tomatreering Rights Reserved'
+  copyright: 'Copyright 2020 Dreadfull Tomato Streaming All Rights Reserved'
 }

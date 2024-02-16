@@ -6,13 +6,17 @@ export const HEADER = {
       icon: '../../../../assets/icon-movies.png',
       iconAlt: 'icon-movies',
       title: 'Movies',
-      type: 'btn-products-type'
+      type: 'btn-products-type',
+      showOnMain: false,
+      url: 'movies',
     },
     {
       icon: '../../../../assets/icon-series.png',
       title: 'Series',
       iconAlt: 'icon-series',
-      type: 'btn-products-type'
+      type: 'btn-products-type',
+      showOnMain: false,
+      url: 'series',
     },
   ],
   secondBtnGroup: [
@@ -20,17 +24,21 @@ export const HEADER = {
       icon: '../../../../assets/icon-filter.png',
       title: 'Filters',
       iconAlt: 'filters',
-      type: 'btn-filter'
+      type: 'btn-filter',
+      showOnMain: false,
     },
     {
       icon: '../../../../assets/icon-login.png',
       title: 'Login',
       iconAlt: 'login',
-      type: 'btn-login'
+      type: 'btn-login',
+      showOnMain: true,
+      url: 'login',
     },
     {
       title: 'Start your free trial',
-      type: 'bnt-trial'
+      type: 'bnt-trial',
+      showOnMain: true,
     },
   ]
 }
