@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MAIN_PAGE } from 'src/app/common/mocks/main-page';
 
 @Component({
   selector: 'app-main-page',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  main = MAIN_PAGE;
 
   constructor() { }
 
