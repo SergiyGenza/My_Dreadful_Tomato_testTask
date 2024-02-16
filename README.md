@@ -1,4 +1,7 @@
-# Dreadful Tomato
+# My Test Task 
+
+
+## Dreadful Tomato
 
 Dreadful Tomato is a new platform to find new movies and TV shows. The main objective is to
 help users to find information about their favourite TV shows and movies.

@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <div class="group left">
+      <img src="{{headerMock.logo}}" alt="{{headerMock.logoAlt}}">
+      <nav>
+        <app-button *ngFor="let btn of headerMock.firstBtnGroup" [title]="btn.title" [btnClass]="btn.type"
+          [icon]="btn.icon" [iconAlt]="btn.iconAlt">
+        </app-button>
+      </nav>
+    </div>
+    <div class="group right">
+      <app-button *ngFor="let btn of headerMock.secondBtnGroup" [title]="btn.title" [btnClass]="btn.type"
+        [icon]="btn.icon" [iconAlt]="btn.iconAlt">
+      </app-button>
+    </div>
+  </div>
+</header>

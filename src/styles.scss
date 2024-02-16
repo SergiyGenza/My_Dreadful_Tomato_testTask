@@ -1,0 +1,18 @@
+@import "./app/styles/reset";
+@import "./app/styles/variables";
+@import "./app/styles/base";
+@import "./app/styles/btns";
+
+
+body {
+  // font-family: $font-main;
+  color: $white;
+  background: $black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  flex-shrink: 0;
+}
