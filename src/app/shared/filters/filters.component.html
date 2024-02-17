@@ -1,0 +1,11 @@
+<div class="filters-wrapper">
+  <div class="container">
+    <div class="input-container">
+      <button (click)="filterData(inputRef.value)">
+        <img src="../../../assets/searching-icon.svg" alt="search icon">
+      </button>
+      <input #inputRef class="montserrat" type="search" placeholder="Name" (keyup.enter)="filterData(inputRef.value)">
+    </div>
+    <app-my-calendar (pickedYear)="onUserYearPick($event)"></app-my-calendar>
+  </div>
+</div>

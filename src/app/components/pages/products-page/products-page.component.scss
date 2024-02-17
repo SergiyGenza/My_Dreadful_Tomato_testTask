@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.products-wrapper {
+  background-color: $page-bg;
+}
+
+.title {
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 6px;
+}

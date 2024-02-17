@@ -1,1 +1,18 @@
-<p>products-page works!</p>
+<app-filters (range)="getRange($event)" (searchValue)="getSearchValue($event)"></app-filters>
+<div class="products-wrapper">
+  <div class="container-products">
+    <div class="title montserrat">
+      popular {{currentRoute | RemoveSymbols}}
+    </div>
+    <div class="products-list" *ngIf="productslist$ | async let productslist">
+      <app-large-card *ngFor="let p of productslist | search:searchValue:range" 
+        [title]="p.title"
+        [img]="p.images.posterArt.url"
+        [description]="p.description" 
+        [releaseYear]="p.releaseYear" 
+        [width]="width" 
+        [height]="height"
+        [cartType]="'small'"></app-large-card>
+    </div>
+  </div>
+</div>

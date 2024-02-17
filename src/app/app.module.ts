@@ -8,6 +8,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { MainPageComponent } from './components/pages/main-page/main-page.component';
 import { ProductsPageComponent } from './components/pages/products-page/products-page.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
