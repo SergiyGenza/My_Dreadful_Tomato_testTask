@@ -10,17 +10,9 @@
   gap: 16px;
 }
 
-.calendar {
-  padding: 8px 12px;
-  border-radius: 20px;
-  width: 100px;
-  color: #000;
-  background-color: #fff;
-}
-
 .input-container {
   padding: 8px 12px 8px 10px;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: #ffffff;
   display: flex;
   gap: 12px;
@@ -46,3 +38,31 @@ input[type="search"] {
 //   outline: none;
 //   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.7);
 // }
+
+.year-calendar select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+/////////
+.year-calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+button {
+  margin: 0 10px;
+}

@@ -8,6 +8,7 @@ import { LargeCardComponent } from './large-card/large-card.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
 import { FiltersComponent } from './filters/filters.component';
+import { MyCalendarComponent } from './my-calendar/my-calendar.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { FiltersComponent } from './filters/filters.component';
     LargeCardComponent,
     ProductCardComponent,
     RemoveSymbolsPipe,
-    FiltersComponent
+    FiltersComponent,
+    MyCalendarComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     ButtonComponent,
@@ -28,6 +30,7 @@ import { FiltersComponent } from './filters/filters.component';
     LargeCardComponent,
     RemoveSymbolsPipe,
     FiltersComponent,
+    MyCalendarComponent
   ]
 })
 export class SharedModule { }

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
-
-  constructor() { }
+  currentRange: number[];
 
   ngOnInit(): void {
+  }
+
+  onUserYearPick(year: number[]) {
+    this.currentRange = year;
+    console.log(this.currentRange);
   }
 
 }

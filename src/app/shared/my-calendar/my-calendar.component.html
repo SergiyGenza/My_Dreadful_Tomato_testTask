@@ -1,0 +1,31 @@
+<div class="calendar montserrat">
+  <div class="calendar-result" (click)="onCalendarClick()">
+    <span *ngIf="!selectedStartYear else result"></span>
+    <ng-template #result>
+      <span>{{ selectedStartYear }} </span>
+      <span *ngIf="selectedEndYear"> - {{ selectedEndYear }}</span>
+    </ng-template>
+  </div>
+  <div class="year-calendar" *ngIf="openCalendar">
+    <div class="year-calendar-header">
+      <button class="prevPage" (click)="prevPage()" [disabled]="currentPage === 0">
+        <img src="../../../assets/left-arrow.png" alt="">
+      </button>
+      <div class="selected-years">
+        <span *ngIf="!selectedStartYear else result">Pick years</span>
+        <ng-template #result>
+          <span>{{ selectedStartYear }} </span>
+          <span *ngIf="selectedEndYear">- {{ selectedEndYear }}</span>
+        </ng-template>
+      </div>
+      <button class="nextPage" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">
+        <img src="../../../assets/right-arrow.png" alt="">
+      </button>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item montserrat" *ngFor="let year of visibleYears; let i = index" (click)="selectYear(year)">
+        {{ year }}
+      </div>
+    </div>
+  </div>
+</div>

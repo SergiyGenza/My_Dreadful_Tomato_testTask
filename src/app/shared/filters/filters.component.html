@@ -4,9 +4,6 @@
       <img src="../../../assets/searching-icon.svg" alt="search icon">
       <input class="montserrat" type="search" placeholder="Name">
     </div>
-    <div class="calendar">
-      calendar
-    </div>
+    <app-my-calendar (pickedYear)="onUserYearPick($event)"></app-my-calendar>
   </div>
-
 </div>
