@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
 import { DeviderComponent } from './devider/devider.component';
 import { LargeCardComponent } from './large-card/large-card.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
 
 
 
@@ -13,6 +15,8 @@ import { LargeCardComponent } from './large-card/large-card.component';
     ButtonComponent,
     DeviderComponent,
     LargeCardComponent,
+    ProductCardComponent,
+    RemoveSymbolsPipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,8 @@ import { LargeCardComponent } from './large-card/large-card.component';
   exports: [
     ButtonComponent,
     DeviderComponent,
-    LargeCardComponent
+    LargeCardComponent,
+    RemoveSymbolsPipe,
   ]
 })
 export class SharedModule { }
