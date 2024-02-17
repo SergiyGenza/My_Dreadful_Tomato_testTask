@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { Product } from 'src/app/common/models/product.modet';
+import { Observable, of } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
+import { Product } from 'src/app/common/models/product.model';
 
 @Component({
   selector: 'app-products-page',
@@ -10,8 +10,11 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./products-page.component.scss']
 })
 export class ProductsPageComponent implements OnInit {
-  subsription: Subscription;
-  productslist$!: Observable<Product>;
+  productslist$: Observable<Product[]>;
+  currentPage: number = 1;
+  itemsPerPage: number = 10;
+  totalPages: number;
+
   currentRoute: string;
   width: string = '230px';
   height: string = '300px';
@@ -21,25 +24,39 @@ export class ProductsPageComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private products: ProductService,
+    private productService: ProductService
   ) {
     this.currentRoute = this.router.url;
-    this.productslist$ = this.products.getProducts(this.removeSlash(this.currentRoute));
   }
 
   ngOnInit(): void {
+    this.loadProducts();
   }
 
-  private removeSlash(url: string): string {
-    return url.replace(/\//g, '');
+  onPageChange(pageNumber: number): void {
+    this.currentPage = pageNumber;
+    this.loadProducts();
+  }
+
+  public getRange(range: number[]) {
+    this.range = range;
   }
 
   public getSearchValue(searchValue: string) {
     this.searchValue = searchValue;
   }
 
-  public getRange(range: number[]) {
-    this.range = range;
+  private loadProducts(): void {
+    this.productService.getProducts(this.removeSlash(this.currentRoute)).subscribe(products => {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      this.totalPages = Math.ceil(products.length / this.itemsPerPage);
+      this.productslist$ = of(products.slice(startIndex, endIndex));
+    });
+  }
+
+  private removeSlash(url: string): string {
+    return url.replace(/\//g, '');
   }
 
 }
