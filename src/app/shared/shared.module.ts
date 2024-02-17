@@ -9,6 +9,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
 import { FiltersComponent } from './filters/filters.component';
 import { MyCalendarComponent } from './my-calendar/my-calendar.component';
+import { SearchPipe } from '../common/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MyCalendarComponent } from './my-calendar/my-calendar.component';
     ProductCardComponent,
     RemoveSymbolsPipe,
     FiltersComponent,
-    MyCalendarComponent
+    MyCalendarComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { MyCalendarComponent } from './my-calendar/my-calendar.component';
     LargeCardComponent,
     RemoveSymbolsPipe,
     FiltersComponent,
-    MyCalendarComponent
+    MyCalendarComponent,
+    SearchPipe,
   ]
 })
 export class SharedModule { }

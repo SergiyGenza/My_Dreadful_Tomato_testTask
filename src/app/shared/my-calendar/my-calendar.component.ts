@@ -16,7 +16,6 @@ export class MyCalendarComponent implements OnInit {
   selectedStartYear: number;
   selectedEndYear: number;
 
-
   constructor() {
     this.initializeYears();
     this.calculateTotalPages();
@@ -58,7 +57,7 @@ export class MyCalendarComponent implements OnInit {
 
   private initializeYears(): void {
     const currentYear = new Date().getFullYear();
-    for (let year = currentYear - 50; year <= currentYear + 10; year++) {
+    for (let year = currentYear - 50; year <= currentYear; year++) {
       this.years.push(year);
     }
   }

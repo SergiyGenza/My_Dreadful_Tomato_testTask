@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -6,14 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
-  currentRange: number[];
+  @Output() range = new EventEmitter<number[]>();
+  @Output() searchValue = new EventEmitter<string>();
 
   ngOnInit(): void {
   }
 
   onUserYearPick(year: number[]) {
-    this.currentRange = year;
-    console.log(this.currentRange);
+    this.range.emit(year)
+  }
+
+  filterData(inputValue: string): void {
+    this.searchValue.emit(inputValue);
   }
 
 }
