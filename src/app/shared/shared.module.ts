@@ -7,8 +7,7 @@ import { DeviderComponent } from './devider/devider.component';
 import { LargeCardComponent } from './large-card/large-card.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
-
-
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,8 @@ import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
     DeviderComponent,
     LargeCardComponent,
     ProductCardComponent,
-    RemoveSymbolsPipe
+    RemoveSymbolsPipe,
+    FiltersComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +27,7 @@ import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
     DeviderComponent,
     LargeCardComponent,
     RemoveSymbolsPipe,
+    FiltersComponent,
   ]
 })
 export class SharedModule { }

@@ -1,3 +1,9 @@
+@import '../../../styles/variables';
+
+.products-wrapper {
+  background-color: $page-bg;
+}
+
 .title {
   text-transform: capitalize;
   font-size: 30px;
