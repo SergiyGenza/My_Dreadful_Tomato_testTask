@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PosterArt } from 'src/app/common/models/product.modet';
+import { PosterArt } from 'src/app/common/models/product.model';
 
 @Component({
   selector: 'app-large-card',

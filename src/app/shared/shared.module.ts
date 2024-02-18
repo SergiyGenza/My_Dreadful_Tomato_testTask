@@ -10,6 +10,7 @@ import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
 import { FiltersComponent } from './filters/filters.component';
 import { MyCalendarComponent } from './my-calendar/my-calendar.component';
 import { SearchPipe } from '../common/pipes/search.pipe';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SearchPipe } from '../common/pipes/search.pipe';
     RemoveSymbolsPipe,
     FiltersComponent,
     MyCalendarComponent,
-    SearchPipe
+    SearchPipe,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { SearchPipe } from '../common/pipes/search.pipe';
     FiltersComponent,
     MyCalendarComponent,
     SearchPipe,
+    PaginationComponent,
   ]
 })
 export class SharedModule { }

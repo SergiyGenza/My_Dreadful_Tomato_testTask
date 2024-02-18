@@ -10,8 +10,8 @@ export class MyCalendarComponent implements OnInit {
   openCalendar: boolean = true;
   years: number[] = [];
   visibleYears: number[] = [];
-  currentPage = 0;
-  pageSize = 9;
+  currentPage: number = 0;
+  pageSize: number = 9;
   totalPages: number;
   selectedStartYear: number;
   selectedEndYear: number;

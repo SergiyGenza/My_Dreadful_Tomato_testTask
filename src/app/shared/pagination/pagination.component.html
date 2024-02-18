@@ -1,0 +1,14 @@
+<div class="pagination">
+  <button class="bnt-prev" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">
+    <img src="../../../assets/right-arrow-white.svg" alt="arrow left">
+  </button>
+  <div class="btn-group">
+    <button class="btn-page-items" *ngFor="let title of totalPagesArray" [class.active]="title === currentPage"
+      (click)="onPageChange(title)">
+      {{ title }}
+    </button>
+  </div>
+  <button class="bnt-next" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">
+    <img src="../../../assets/right-arrow-white.svg" alt="arrow right">
+  </button>
+</div>

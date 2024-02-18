@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Product } from '../models/product.modet';
+import { Product } from '../models/product.model';
 
 @Pipe({
   name: 'search',

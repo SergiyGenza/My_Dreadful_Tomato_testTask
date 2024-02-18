@@ -13,7 +13,7 @@ export class FiltersComponent implements OnInit {
   }
 
   onUserYearPick(year: number[]) {
-    this.range.emit(year)
+    this.range.emit(year);
   }
 
   filterData(inputValue: string): void {
