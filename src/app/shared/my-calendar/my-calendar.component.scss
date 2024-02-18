@@ -3,61 +3,77 @@
 .calendar {
   border-radius: 30px;
   width: 170px;
-  // height: 100%;
   color: #000;
   position: relative;
+
+  &__result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: $white;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+
+    img {
+      width: 24px;
+    }
+  }
+
+  &__selected-years {
+    color: $white;
+  }
+
+  &__content {
+    position: absolute;
+    right: 6px;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $red-bg;
+    z-index: 1000;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 3rem;
+  }
+
+  &__years {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 10px;
+    padding: 1rem;
+    background-color: #fff;
+
+    &__item {
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  button {
+    margin: 0 10px;
+    width: 24px;
+  }
 }
 
-.calendar-result {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background-color: $white;
-  border-radius: 20px;
-  height: 40px;
-  width: 100%;
-}
-
-.year-calendar-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  height: 3rem;
-}
-
-.year-calendar {
-  position: absolute;
-  right: 6px;
-  top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: $red-bg;
-  z-index: 1000;
-}
-
-.selected-years {}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 1rem;
-  background-color: #fff;
-}
-
-.grid-item {
-  padding: 10px;
-  cursor: pointer;
-}
-
-button {
-  margin: 0 10px;
-  width: 24px;
+.active {
+  color: $white;
 }
 
 .montserrat {
   font-size: 16px;
+  font-weight: 500;
+}
+
+.prevPage img {
+  transform: rotate(180deg);
 }

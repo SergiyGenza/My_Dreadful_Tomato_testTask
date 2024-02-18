@@ -1,30 +1,27 @@
 <div class="card-wrapper" [style.width]="width" [style.height]="height">
-  <a routerLink="{{url}}" *ngIf="cartType == 'large' else smallCart">
+  <ng-container *ngIf="cartType == 'large' else smallCart">
     <img src="{{img}}" alt="{{alt}}" [style.width]="width" [style.height]="height">
-    <div class="title">
+    <div class="card__title">
       <span class="roboto-semibold">{{title}}</span>
     </div>
     <div class="overlay"></div>
-  </a>
+  </ng-container>
 </div>
 
 <ng-template #smallCart>
   <div class="card">
     <img src="{{img}}" alt="{{alt}}" [style.width]="width" [style.height]="height">
-    <div class="title-small">
-      <span class="roboto-semibold">{{title}}</span>
-      <div class="content">
-        <div class="release">
+    <div class="card__body">
+      <span class="card__title-small roboto-semibold">{{title}}</span>
+      <div class="card__content">
+        <div class="card__content__release">
           <img src="../../../assets/icon-calendar.png" alt="calendar-icon">
           {{releaseYear}}
         </div>
-        <div class="description">
+        <div class="card__content__description">
           {{description}}
         </div>
       </div>
     </div>
   </div>
 </ng-template>
-
-<!-- (mouseenter)="showDescription=true" (mouseleave)="showDescription=false" -->
-<!-- [ngClass]="{first: showDescription}" -->

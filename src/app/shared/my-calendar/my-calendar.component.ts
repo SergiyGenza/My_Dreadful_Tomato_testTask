@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MyCalendarComponent implements OnInit {
   @Output() pickedYear = new EventEmitter<number[]>();
-  openCalendar: boolean = true;
+  openCalendar: boolean = false;
   years: number[] = [];
   visibleYears: number[] = [];
   currentPage: number = 0;
@@ -15,6 +15,8 @@ export class MyCalendarComponent implements OnInit {
   totalPages: number;
   selectedStartYear: number;
   selectedEndYear: number;
+
+  emptyValue: number;
 
   constructor() {
     this.initializeYears();
@@ -26,16 +28,23 @@ export class MyCalendarComponent implements OnInit {
   }
 
   public selectYear(year: number): void {
-    if (!this.selectedStartYear) {
+    if (this.selectedStartYear === year || this.selectedEndYear === year) {
+      this.selectedStartYear = this.emptyValue;
+      this.selectedEndYear = this.emptyValue;
+    } else if (!this.selectedStartYear) {
       this.selectedStartYear = year;
     } else if (!this.selectedEndYear && year > this.selectedStartYear) {
       this.selectedEndYear = year;
+    } else if (!this.selectedEndYear && !this.selectedEndYear) {
+      this.selectedStartYear = this.emptyValue;
+      this.selectedEndYear = this.emptyValue;
     } else {
       this.selectedStartYear = year;
-      this.selectedEndYear = null;
+      this.selectedEndYear = this.emptyValue;
     }
     this.pickedYear.emit([this.selectedStartYear, this.selectedEndYear]);
   }
+
 
   public nextPage(): void {
     if (this.currentPage < this.totalPages - 1) {
@@ -57,7 +66,7 @@ export class MyCalendarComponent implements OnInit {
 
   private initializeYears(): void {
     const currentYear = new Date().getFullYear();
-    for (let year = currentYear - 50; year <= currentYear; year++) {
+    for (let year = currentYear - 30; year <= currentYear; year++) {
       this.years.push(year);
     }
   }

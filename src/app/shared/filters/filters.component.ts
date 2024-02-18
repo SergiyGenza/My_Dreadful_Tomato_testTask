@@ -1,16 +1,14 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
-  styleUrls: ['./filters.component.scss']
+  styleUrls: ['./filters.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FiltersComponent implements OnInit {
+export class FiltersComponent {
   @Output() range = new EventEmitter<number[]>();
   @Output() searchValue = new EventEmitter<string>();
-
-  ngOnInit(): void {
-  }
 
   onUserYearPick(year: number[]) {
     this.range.emit(year);

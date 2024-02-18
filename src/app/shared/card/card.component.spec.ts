@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeviderComponent } from './devider.component';
+import { LargeCardComponent } from './card.component';
 
-describe('DeviderComponent', () => {
-  let component: DeviderComponent;
-  let fixture: ComponentFixture<DeviderComponent>;
+describe('LargeCardComponent', () => {
+  let component: LargeCardComponent;
+  let fixture: ComponentFixture<LargeCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeviderComponent ]
+      declarations: [ LargeCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeviderComponent);
+    fixture = TestBed.createComponent(LargeCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

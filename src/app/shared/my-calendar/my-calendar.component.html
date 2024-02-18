@@ -1,29 +1,33 @@
 <div class="calendar montserrat">
-  <div class="calendar-result" (click)="onCalendarClick()">
-    <span *ngIf="!selectedStartYear else result"></span>
+  <div class="calendar__result" (click)="onCalendarClick()">
+    <img src="../../../assets/icon-calendar.png" alt="calendar icon">
+    <ng-container class="" *ngIf="!selectedStartYear else result">
+      Pick Date
+    </ng-container>
     <ng-template #result>
       <span>{{ selectedStartYear }} </span>
       <span *ngIf="selectedEndYear"> - {{ selectedEndYear }}</span>
     </ng-template>
   </div>
-  <div class="year-calendar" *ngIf="openCalendar">
-    <div class="year-calendar-header">
+  <div class="calendar__content" *ngIf="openCalendar">
+    <div class="calendar__header">
       <button class="prevPage" (click)="prevPage()" [disabled]="currentPage === 0">
-        <img src="../../../assets/left-arrow.png" alt="">
+        <img src="../../../assets/right-arrow-white.svg" alt="right-arrow">
       </button>
-      <div class="selected-years">
-        <span *ngIf="!selectedStartYear else result">Pick years</span>
+      <div class="calendar__selected-years">
+        <span *ngIf="!selectedStartYear else result">Pick Date</span>
         <ng-template #result>
           <span>{{ selectedStartYear }} </span>
           <span *ngIf="selectedEndYear">- {{ selectedEndYear }}</span>
         </ng-template>
       </div>
       <button class="nextPage" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">
-        <img src="../../../assets/right-arrow.png" alt="">
+        <img src="../../../assets/right-arrow-white.svg" alt="right-arrow">
       </button>
     </div>
-    <div class="grid-container">
-      <div class="grid-item montserrat" *ngFor="let year of visibleYears; let i = index" (click)="selectYear(year)">
+    <div class="calendar__years">
+      <div class="calendar__years__item montserrat" *ngFor="let year of visibleYears; let i = index"
+        (click)="selectYear(year)" [class.active]="year === selectedEndYear || year === selectedStartYear">
         {{ year }}
       </div>
     </div>

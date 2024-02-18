@@ -1,12 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PosterArt } from 'src/app/common/models/product.model';
 
 @Component({
-  selector: 'app-large-card',
-  templateUrl: './large-card.component.html',
-  styleUrls: ['./large-card.component.scss']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LargeCardComponent implements OnInit {
+export class CardComponent {
   @Input() img: string | PosterArt
   @Input() alt: string = 'product';
   @Input() url: string;
@@ -19,11 +20,5 @@ export class LargeCardComponent implements OnInit {
   @Input() height: string;
   @Input() cartType: 'small' | 'large' = 'large'
 
-  showDescription: boolean = false;
-
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
