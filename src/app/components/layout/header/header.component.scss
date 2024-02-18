@@ -8,9 +8,35 @@
 .group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 img[alt="logo"] {
   cursor: pointer;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media screen and (max-width:980px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .group {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:440px) {
+  .left {
+    flex-direction: column;
+  }
 }

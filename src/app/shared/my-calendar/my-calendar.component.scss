@@ -36,6 +36,7 @@
     justify-content: center;
     background-color: $red-bg;
     z-index: 1000;
+    width: auto;
   }
 
   &__header {
@@ -76,4 +77,12 @@
 
 .prevPage img {
   transform: rotate(180deg);
+}
+
+@media screen and (max-width:504px) {
+  .calendar {
+    &__content {
+      right: -34px;
+    }
+  }
 }
