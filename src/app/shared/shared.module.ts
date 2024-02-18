@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { ButtonComponent } from './button/button.component';
 import { DeviderComponent } from './devider/devider.component';
-import { LargeCardComponent } from './large-card/large-card.component';
+import { CardComponent } from './card/card.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { RemoveSymbolsPipe } from '../common/pipes/removeSymbols.pipe';
 import { FiltersComponent } from './filters/filters.component';
@@ -16,7 +16,7 @@ import { PaginationComponent } from './pagination/pagination.component';
   declarations: [
     ButtonComponent,
     DeviderComponent,
-    LargeCardComponent,
+    CardComponent,
     ProductCardComponent,
     RemoveSymbolsPipe,
     FiltersComponent,
@@ -31,7 +31,7 @@ import { PaginationComponent } from './pagination/pagination.component';
   exports: [
     ButtonComponent,
     DeviderComponent,
-    LargeCardComponent,
+    CardComponent,
     RemoveSymbolsPipe,
     FiltersComponent,
     MyCalendarComponent,

@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PosterArt } from 'src/app/common/models/product.model';
 
 @Component({
-  selector: 'app-large-card',
-  templateUrl: './large-card.component.html',
-  styleUrls: ['./large-card.component.scss']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss']
 })
-export class LargeCardComponent implements OnInit {
+export class CardComponent implements OnInit {
   @Input() img: string | PosterArt
   @Input() alt: string = 'product';
   @Input() url: string;

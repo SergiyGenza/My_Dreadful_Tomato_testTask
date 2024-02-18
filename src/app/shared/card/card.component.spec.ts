@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LargeCardComponent } from './large-card.component';
+import { LargeCardComponent } from './card.component';
 
 describe('LargeCardComponent', () => {
   let component: LargeCardComponent;
