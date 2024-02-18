@@ -15,11 +15,10 @@ export class ProductsPageComponent implements OnInit {
   itemsPerPage: number = 10;
   totalPages: number;
   totalPagesArray: number[];
-  some: number[];
 
   currentRoute: string;
-  width: string = '230px';
-  height: string = '300px';
+  width: string = '210px';
+  height: string = '270px';
 
   range: number[];
   searchValue: string;
@@ -29,14 +28,10 @@ export class ProductsPageComponent implements OnInit {
     private productService: ProductService
   ) {
     this.currentRoute = this.router.url;
+    this.currentRoute = this.removeSlash(this.currentRoute);
   }
 
   ngOnInit(): void {
-    this.loadProducts();
-  }
-
-  onPageChange(pageNumber: number): void {
-    this.currentPage = pageNumber;
     this.loadProducts();
   }
 
@@ -57,14 +52,22 @@ export class ProductsPageComponent implements OnInit {
 
   private loadProducts(): void {
     this.productService
-      .getProducts(this.removeSlash(this.currentRoute), this.range, this.searchValue)
-      .subscribe(products => {
-        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-        const endIndex = startIndex + this.itemsPerPage;
-        this.totalPages = Math.ceil(products.length / this.itemsPerPage);
-        this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
-        this.some = this.totalPagesArray
-        this.productslist$ = of(products.slice(startIndex, endIndex));
+      .getProducts(this.currentRoute, this.range, this.searchValue)
+      .subscribe({
+        next: (products) => {
+          if (Array.isArray(products)) {
+            const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+            const endIndex = startIndex + this.itemsPerPage;
+            this.totalPages = Math.ceil(products.length / this.itemsPerPage);
+            this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+            this.productslist$ = of(products.slice(startIndex, endIndex));
+          } else {
+            console.error('Received products is not an array:', products);
+          }
+        },
+        error: (error) => {
+          console.error('Error occurred while fetching products:', error);
+        }
       });
   }
 

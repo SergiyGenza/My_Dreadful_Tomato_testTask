@@ -13,13 +13,6 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  // public getProducts(programType: string) {
-  //   return this.http.get<any>(url).pipe(
-  //     map((data) =>
-  //       data.entries.filter((product: any) => product.programType === programType)
-  //     ))
-  // }
-
   getProductsSlice(products: any[], startIndex: number, endIndex: number): Observable<any[]> {
     return of(products.slice(startIndex, endIndex));
   }
