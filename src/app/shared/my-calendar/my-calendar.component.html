@@ -12,7 +12,7 @@
   <div class="calendar__content" *ngIf="openCalendar">
     <div class="calendar__header">
       <button class="prevPage" (click)="prevPage()" [disabled]="currentPage === 0">
-        <img src="../../../assets/left-arrow.png" alt="">
+        <img src="../../../assets/right-arrow-white.svg" alt="right-arrow">
       </button>
       <div class="calendar__selected-years">
         <span *ngIf="!selectedStartYear else result">Pick Date</span>
@@ -22,7 +22,7 @@
         </ng-template>
       </div>
       <button class="nextPage" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">
-        <img src="../../../assets/right-arrow.png" alt="">
+        <img src="../../../assets/right-arrow-white.svg" alt="right-arrow">
       </button>
     </div>
     <div class="calendar__years">

@@ -16,6 +16,8 @@ export class MyCalendarComponent implements OnInit {
   selectedStartYear: number;
   selectedEndYear: number;
 
+  emptyValue: number;
+
   constructor() {
     this.initializeYears();
     this.calculateTotalPages();
@@ -26,16 +28,20 @@ export class MyCalendarComponent implements OnInit {
   }
 
   public selectYear(year: number): void {
-    if (!this.selectedStartYear) {
+    if (this.selectedStartYear === year || this.selectedEndYear === year) {
+      this.selectedStartYear = this.emptyValue;
+      this.selectedEndYear = this.emptyValue;
+    } else if (!this.selectedStartYear) {
       this.selectedStartYear = year;
     } else if (!this.selectedEndYear && year > this.selectedStartYear) {
       this.selectedEndYear = year;
     } else {
       this.selectedStartYear = year;
-      this.selectedEndYear = null;
+      this.selectedEndYear = this.emptyValue;
     }
     this.pickedYear.emit([this.selectedStartYear, this.selectedEndYear]);
   }
+
 
   public nextPage(): void {
     if (this.currentPage < this.totalPages - 1) {
