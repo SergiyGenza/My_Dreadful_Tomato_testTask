@@ -35,6 +35,9 @@ export class MyCalendarComponent implements OnInit {
       this.selectedStartYear = year;
     } else if (!this.selectedEndYear && year > this.selectedStartYear) {
       this.selectedEndYear = year;
+    } else if (!this.selectedEndYear && !this.selectedEndYear) {
+      this.selectedStartYear = this.emptyValue;
+      this.selectedEndYear = this.emptyValue;
     } else {
       this.selectedStartYear = year;
       this.selectedEndYear = this.emptyValue;

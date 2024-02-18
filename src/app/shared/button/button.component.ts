@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   @Input() title: string;
   @Input() icon: string;
   @Input() iconAlt: string;
@@ -13,8 +14,4 @@ export class ButtonComponent implements OnInit {
   @Input() url: string;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
