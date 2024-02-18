@@ -5,18 +5,19 @@
   margin-top: 4px;
 }
 
-.group {
+.btn-group {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 img[alt="logo"] {
   cursor: pointer;
 }
 
-.left {
+.btn-group-left {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -27,16 +28,20 @@ img[alt="logo"] {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .btn-group {
+    width: auto;
+  }
 }
 
 @media screen and (max-width:700px) {
-  .group {
+  .btn-group {
     flex-direction: column;
   }
 }
 
 @media screen and (max-width:440px) {
-  .left {
+  .btn-group-left {
     flex-direction: column;
   }
 }

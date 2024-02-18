@@ -1,7 +1,7 @@
 <header>
   <div class="container">
     <img src="{{headerMock.logo}}" alt="{{headerMock.logoAlt}}" routerLink="/">
-    <div class="group">
+    <div class="btn-group">
       <nav >
         <ng-container *ngFor="let btn of headerMock.firstBtnGroup">
           <app-button *ngIf="displayButton(btn)"
@@ -13,7 +13,7 @@
         </app-button>
       </ng-container>
       </nav>
-      <div class="left">
+      <div class="btn-group-left">
         <app-button *ngFor="let btn of headerMock.secondBtnGroup"
         [title]="btn.title"
         [btnClass]="btn.type"
