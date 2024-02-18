@@ -14,6 +14,8 @@ export class ProductsPageComponent implements OnInit {
   currentPage: number = 1;
   itemsPerPage: number = 10;
   totalPages: number;
+  totalPagesArray: number[];
+  some: number[];
 
   currentRoute: string;
   width: string = '230px';
@@ -40,19 +42,30 @@ export class ProductsPageComponent implements OnInit {
 
   public getRange(range: number[]) {
     this.range = range;
+    this.loadProducts();
   }
 
   public getSearchValue(searchValue: string) {
     this.searchValue = searchValue;
+    this.loadProducts();
+  }
+
+  public changePage(changePage: number) {
+    this.currentPage = changePage;
+    this.loadProducts();
   }
 
   private loadProducts(): void {
-    this.productService.getProducts(this.removeSlash(this.currentRoute)).subscribe(products => {
-      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-      const endIndex = startIndex + this.itemsPerPage;
-      this.totalPages = Math.ceil(products.length / this.itemsPerPage);
-      this.productslist$ = of(products.slice(startIndex, endIndex));
-    });
+    this.productService
+      .getProducts(this.removeSlash(this.currentRoute), this.range, this.searchValue)
+      .subscribe(products => {
+        const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+        const endIndex = startIndex + this.itemsPerPage;
+        this.totalPages = Math.ceil(products.length / this.itemsPerPage);
+        this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+        this.some = this.totalPagesArray
+        this.productslist$ = of(products.slice(startIndex, endIndex));
+      });
   }
 
   private removeSlash(url: string): string {

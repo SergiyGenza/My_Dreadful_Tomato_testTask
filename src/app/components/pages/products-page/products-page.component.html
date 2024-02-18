@@ -5,14 +5,20 @@
       popular {{currentRoute | RemoveSymbols}}
     </div>
     <div class="products-list" *ngIf="productslist$ | async let productslist">
-      <app-large-card *ngFor="let p of productslist | search:searchValue:range" [title]="p.title"
-        [img]="p.images.posterArt.url" [description]="p.description" [releaseYear]="p.releaseYear" [width]="width"
-        [height]="height" [cartType]="'small'"></app-large-card>
+      <app-large-card *ngFor="let p of productslist" [title]="p.title"
+        [img]="p.images.posterArt.url"
+        [description]="p.description"
+        [releaseYear]="p.releaseYear"
+        [width]="width"
+        [height]="height"
+        [cartType]="'small'">
+      </app-large-card>
     </div>
-    <div>
-      <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
-      <span>{{ currentPage }} / {{ totalPages }}</span>
-      <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
-    </div>
+    <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      [totalPagesArray]="totalPagesArray"
+      (changePage)="changePage($event)"></app-pagination>
   </div>
+
 </div>
