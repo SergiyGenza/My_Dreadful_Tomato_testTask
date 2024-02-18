@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MyCalendarComponent implements OnInit {
   @Output() pickedYear = new EventEmitter<number[]>();
-  openCalendar: boolean = true;
+  openCalendar: boolean = false;
   years: number[] = [];
   visibleYears: number[] = [];
   currentPage: number = 0;
@@ -57,7 +57,7 @@ export class MyCalendarComponent implements OnInit {
 
   private initializeYears(): void {
     const currentYear = new Date().getFullYear();
-    for (let year = currentYear - 50; year <= currentYear; year++) {
+    for (let year = currentYear - 30; year <= currentYear; year++) {
       this.years.push(year);
     }
   }
