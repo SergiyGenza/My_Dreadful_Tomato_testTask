@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PaginationComponent } from './pagination.component';
 
 describe('PaginationComponent', () => {
@@ -8,9 +7,9 @@ describe('PaginationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginationComponent ]
+      declarations: [PaginationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +21,13 @@ describe('PaginationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit changePage event when onPageChange is called', () => {
+    spyOn(component.changePage, 'emit');
+    const pageNumber = 2;
+    component.onPageChange(pageNumber);
+    expect(component.currentPage).toEqual(pageNumber);
+    expect(component.changePage.emit).toHaveBeenCalledWith(pageNumber);
+  });
 });
+  
