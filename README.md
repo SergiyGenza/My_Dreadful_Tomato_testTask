@@ -1,64 +1,17 @@
-# My Test Task 
+# My_Dreadful_Tomato_testTask
 
+This application was developed for a test task and was cloned from https://github.com/it-does-not-matter/test-task .
 
-## Dreadful Tomato
+## Development Highlights
 
-Dreadful Tomato is a new platform to find new movies and TV shows. The main objective is to
-help users to find information about their favourite TV shows and movies.
+I built the application with as few components as possible, reusing them whenever possible. This can be observed in the structure of pages and buttons. To optimize the performance of the generated components, I adjusted their update strategies.
 
-To do so, the company has to create a new web app that allow users do some fancy things.
+Several base SCSS files were created for convenient use of variables, fonts, and other auxiliary elements. I utilized the advantages of SCSS syntax where it was appropriate and indeed simplified working with styles.
 
-## What do you have to do?
+The business logic related to data retrieval is isolated within a service. Data retrieval is implemented by isolating the business logic within a service. The service obtains data regarding the user's current page and filters the data accordingly to the selected page.
 
-Dreadful Tomato needs to implement an awesome webpage where the users could view information
-about almost every new TV Shows and movie.
+A calendar was handcrafted within the application to meet specific requirements. It features functionality for selecting only a specific range of years.
 
-The Design team has sent us the new interface which has to be implemented. As you could see,
-there are three different pages.
+Search within the input field is implemented without Angular/Forms due to conflicts between the project's version and those available to me. (I chose not to update the project's packages to avoid unnecessary errors). Therefore, the search is triggered after pressing Enter or the search icon.
 
-* The first page is a landing page where user could select whether she wants to see TV shows
-  or movies and some claims and logo of Dreadful Tomato
-* The second one is the list of TV shows. Here, the user could filter TV shows by title and
-  release year. In that page the user will see a list of card with the Title, description
-  and image from each TV show.
-* The third one is quite similar, but for the movies. The user could filter by title and
-  release year as well, to see a list of cards with the information of every movie.
-
-Here you could see the design of the 3 pages:
-
-Home page:
-
-![](images/Dreadful%20Tomato%20-%20HOME.png)
-
-TV shows page:
-
-![](images/Dreadful%20Tomato%20-%20POPULAR%20SERIES.png)
-
-Movies page:
-
-![](images/Dreadful%20Tomato%20-%20POPULAR%20MOVIES.png)
-
-## Technical Requirements
-
-Their CTO has no time to implement that, but she has defined some technical constraints:
-
-* This webapp has to be developed using Angular
-* Create reusable components
-* Create a **clean, maintainable and well-designed** code
-* Test your code until you are comfortable with that
-
-#### Considerations
-
-* To obtain the data of the TV Shows and Movies, you have to request [that file](https://static.rviewer.io/challenges/datasets/dreadful-tomatoes/data.json).
-* Use SCSS or SASS to manage your stylesheets
-* Use any component you want in the date picker to allow the user select the Year
-* Pay attention to hover effects (Home and Shows/Movies cards)
-
-To understand how you take decisions during the implementation, please write a README file
-explaining some of the most important parts of the application.
-
----
-
-## How to submit your solution
-
-* Push your code to your public repository and send to us link with result
+The product filter within the application operates on the principle of data retrieval and sequential filtering using the service.
