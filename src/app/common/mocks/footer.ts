@@ -1,5 +1,5 @@
 export const FOOTER = {
-  logo: '../../../../assets/logo.png',
+  logo: 'assets/logo.png',
   alt: 'logo',
   nav: [
     "Home",
@@ -10,11 +10,11 @@ export const FOOTER = {
   ],
   marketplaces: [
     {
-      market: '../../../../assets/app-store.png',
+      market: 'assets/app-store.png',
       alt: 'app-store'
     },
     {
-      market: '../../../../assets/google-play.png',
+      market: 'assets/google-play.png',
       alt: 'google-play'
     }
   ],

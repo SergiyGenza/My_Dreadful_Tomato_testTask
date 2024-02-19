@@ -1,6 +1,6 @@
 <div class="pagination">
   <button class="pagination__bnt-prev" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">
-    <img src="../../../assets/arrow-forward-navigation-svgrepo-com.svg" alt="arrow left">
+    <img src="assets/arrow-forward-navigation-svgrepo-com.svg" alt="arrow left">
   </button>
   <div class="pagination__btn-group montserrat">
     <button class="pagination__btn-page-items" *ngFor="let page of totalPagesArray" [class.active]="page === currentPage"
@@ -9,6 +9,6 @@
     </button>
   </div>
   <button class="pagination__bnt-next" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">
-    <img src="../../../assets/arrow-forward-navigation-svgrepo-com.svg" alt="arrow right">
+    <img src="assets/arrow-forward-navigation-svgrepo-com.svg" alt="arrow right">
   </button>
 </div>
