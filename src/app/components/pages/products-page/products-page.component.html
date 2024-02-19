@@ -1,26 +1,34 @@
 <app-filters (range)="getRange($event)" (searchValue)="getSearchValue($event)"></app-filters>
 <div class="products-wrapper">
-  <div class="container-products">
+  <div class="container-products" *ngIf="productslist$ | async let productslist">
     <div class="title montserrat">
       popular {{currentRoute | RemoveSymbols}}
     </div>
-    <div class="products-list" *ngIf="productslist$ | async let productslist">
-      <app-card *ngFor="let p of productslist"
-        [title]="p.title"
-        [img]="p.images.posterArt.url"
-        [description]="p.description"
-        [releaseYear]="p.releaseYear"
-        [width]="width"
-        [height]="height"
-        [cartType]="'small'">
-      </app-card>
+    <div class="content">
+      <div class="products-list">
+        <ng-container *ngIf="productslist.length > 0; else notFound">
+          <app-card *ngFor="let p of productslist"
+            [title]="p.title"
+            [img]="p.images.posterArt.url"
+            [description]="p.description"
+            [releaseYear]="p.releaseYear"
+            [width]="width"
+            [height]="height"
+            [cartType]="'small'">
+          </app-card>
+        </ng-container>
+        <ng-template #notFound>
+          <div class="not-found">
+            Not Found
+          </div>
+        </ng-template>
+      </div>
     </div>
-    <app-pagination
+    <app-pagination *ngIf="productslist.length > 0;"
       [currentPage]="currentPage"
       [totalPages]="totalPages"
       [totalPagesArray]="totalPagesArray"
       (changePage)="changePage($event)">
     </app-pagination>
   </div>
-
 </div>
